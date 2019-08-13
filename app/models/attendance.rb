@@ -5,8 +5,10 @@ class Attendance < ApplicationRecord
   belongs_to :user
   belongs_to :event
 
-  def send_email
-    AdminMailer.send_email(self).deliver_now
-  end
+  after_create :attending_event_send
 
-end
+   def attending_event_send
+     UserMailer.attending_event_email(self.event.administrator, self.user).deliver_now
+   end
+
+ end
