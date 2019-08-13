@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Salut <%= User.find(@admin).first_name %> !</h1>
+    <p>
+    Tu as créé l'évenement <%= @event.title %> et tu as un nouveau participant <%= @event.title %> .
+    </p>
+    <p> Merci d'avoir créé ce bel évenement !</p>
+  </body>
+</html>
